@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "mainClass": "com.example.myapplication.MainActivityKt",
+        "type": "kotlin",
+        "request": "launch",
+        "name": "Debug",
+        "projectRoot": "${workspaceFolder}",
+        "preLaunchTask": "Build",
+        // "stopOnEntry": false,
+      }
+    ]
+  }
+  
