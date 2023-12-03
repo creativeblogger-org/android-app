@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+upload-keystore.jks
+private_key.pepk
