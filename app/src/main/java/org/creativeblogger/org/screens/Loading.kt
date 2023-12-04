@@ -1,9 +1,12 @@
 package org.creativeblogger.org.screens
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import org.creativeblogger.org.datastore.StoreToken
@@ -23,5 +26,7 @@ fun LoadingScreen(
         navController.navigate(Screen.Home.route)
     }
 
-    Text("Loading...", color = MaterialTheme.colorScheme.onBackground)
+    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+        Text("Loading...", color = MaterialTheme.colorScheme.onBackground)
+    }
 }

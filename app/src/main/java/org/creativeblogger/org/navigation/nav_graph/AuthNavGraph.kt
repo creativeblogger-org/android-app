@@ -1,5 +1,6 @@
 package org.creativeblogger.org.navigation.nav_graph
 
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -8,6 +9,7 @@ import org.creativeblogger.org.navigation.AUTHENTICATION_ROUTE
 import org.creativeblogger.org.navigation.Screen
 import org.creativeblogger.org.screens.LoadingScreen
 import org.creativeblogger.org.screens.LoginScreen
+import org.creativeblogger.org.viewmodel.LoginViewModel
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(startDestination = Screen.Loading.route, route = AUTHENTICATION_ROUTE) {
@@ -15,7 +17,8 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
             LoadingScreen(navController = navController)
         }
         composable(Screen.Login.route) {
-            LoginScreen()
+            val loginViewModel = viewModel<LoginViewModel>()
+            LoginScreen(loginViewModel)
         }
     }
 }
