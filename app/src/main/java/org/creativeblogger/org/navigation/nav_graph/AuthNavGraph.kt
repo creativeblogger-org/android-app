@@ -17,8 +17,9 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
             LoadingScreen(navController = navController)
         }
         composable(Screen.Login.route) {
-            val loginViewModel = viewModel<LoginViewModel>()
+            val loginViewModel = hiltView<LoginViewModel>()
             LoginScreen(loginViewModel)
         }
+        //20:48
     }
 }

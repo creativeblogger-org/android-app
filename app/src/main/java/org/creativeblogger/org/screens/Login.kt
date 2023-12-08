@@ -33,12 +33,12 @@ import org.creativeblogger.org.R
 import org.creativeblogger.org.custom_components.GradientButton
 import org.creativeblogger.org.viewmodel.LoginViewModel
 
+const val API_URL = "https://creativeblogger.org"
+
 @Composable
 fun LoginScreen(
     loginViewModel: LoginViewModel
 ) {
-    val transition = rememberInfiniteTransition(label = "")
-    val angle by transition.animateFloat(initialValue = 0.0f, targetValue = 360.0f, label = "")
     val context = LocalContext.current
     Column(
         modifier = Modifier
@@ -51,8 +51,7 @@ fun LoginScreen(
         Text(
             stringResource(R.string.welcome_back),
             color = MaterialTheme.colorScheme.onBackground,
-            fontSize = MaterialTheme.typography.headlineLarge.fontSize,
-            modifier = Modifier.rotate(angle)
+            fontSize = MaterialTheme.typography.headlineLarge.fontSize
         )
         OutlinedTextField(
             value = loginViewModel.emailOrUsername,
